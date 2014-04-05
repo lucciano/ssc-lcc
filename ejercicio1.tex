@@ -14,11 +14,23 @@ Calcular y graficar la solución del sistema (1.4) considerando un volumen ininc
 \begin{equation}
 \epsilon(t) = \left\{ \begin{array}{rl}
   0 &\mbox{ si $x(t) < 0$} \\
-  1 &\mbox{ si $x(t) \leq 0$ }
+  1 &\mbox{ si $x(t) \geq 0$ }
        \end{array} \right .
  \label{P1.1a} \tag{P1.1a}
 \end{equation}
 Utilizar los parámetros: $\rho = 1$, $g=9.8$, $A= 1$ y $R = 1$.
+
+\begin{align*}
+  \dot{V}(t) &= -\frac{\rho \cdot g}{A \cdot R} \cdot V(t) + Q(t) \\
+  V(t) &= e^{\lambda} \cdot V(0) + \int_0^t e^{\lambda} (t - \pi) \cdot Q(\pi) d\pi \\
+  \lambda &= -\frac{\rho \cdot g}{A \cdot R}
+\end{align*}
+
+\begin{figure}%%Extraño que el volumen se mantenga constante.
+\includegraphics[width=\textwidth]{img/ej01.png}
+\caption{Volumen del sistema 1.4 a lo largo de 2s}
+\label{fig:p1.1}
+\end{figure}
 
   \item[P1.2] Solucion libre de un sistema de segundo orden
 	Para el sistema (1.5):
