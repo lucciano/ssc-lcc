@@ -26,7 +26,7 @@ Utilizar los parámetros: $\rho = 1$, $g=9.8$, $A= 1$ y $R = 1$.
   \lambda &= -\frac{\rho \cdot g}{A \cdot R}
 \end{align*}
 
-\begin{figure}%%Extraño que el volumen se mantenga constante.
+\begin{figure}%%Extraño que el volumen se mantenga constante. XXX: La grafica termina al principio del documento, corregir.
 \includegraphics[width=\textwidth]{img/ej01.png}
 \caption{Volumen del sistema 1.4 a lo largo de 2s}
 \label{fig:p1.1}
@@ -74,5 +74,21 @@ Interpretar los resultados.
   \end{cases}\\
 \end{align*}
 \end{itemize}
+
+Este sistam puede representar un modelo simplificado de una pelota que rebota contra el piso. Cuando $x(t) > 0$ la pelota está en el aire y cuando $x(t) \leq 0$ la pelota está en contacto con el piso y se modeliza como un sistema "masa resorte"
+
+Desde el punto de vista matemático, la ecuación (7.1) es seccionalmente lineal ó lineal a tramos. Si bien no se puede calcular la solución analítica en forma exacta, es posible calcular tramos de la solución.
+
+Considerando entonces los parámetros $b_{a} = 0.1$, $m=1$, $b=30$, $g=9.8$ y $k = 100000$, se pide:
+\begin{enumerate}[a)]
+\item Calcular y graficar un tramo de la solución desde la condición inicial $x(0)=10$, $v(0)=0$, hasta el tiempo $t_{1}$, en el que se verifique $x(t_{1})=0$.
+Ayuda: Como la matriz $A$ es singular es este caso no puede calcularse la integral de $e^{A \cdot t}$ como $A^{-1} \cdot e^{A \cdot t}$. Una opción (para seguir utilizando esta forma de integrar) es modificar la matriz $A$, agregando un pequeño término que evite que sea singular.
+
+Además notar que para calcular el tiempo $t_{1}$ va a ser necesario utilizar alguna forma de iteración.
+
+\item Utiliando como condición inicial los valores finales del tramo obtenido en el punto anterior: $x(t_{1})(=0)$, $v(t_{1})$, calcular un nuevo tramo de la solución hasta un instante $t_{2}$ en que se verifique nuevamente $x(t_{2})=0$.
+
+\item Repetir el punto anterior varias veces y graficar la solución obtenida.
+\end{enumerate}
 
 \end{document}
