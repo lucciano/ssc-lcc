@@ -4,6 +4,7 @@
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{enumerate}
+\usepackage{float}
 
 \begin{document}
 
@@ -26,7 +27,7 @@ Utilizar los parámetros: $\rho = 1$, $g=9.8$, $A= 1$ y $R = 1$.
   \lambda &= -\frac{\rho \cdot g}{A \cdot R}
 \end{align*}
 
-\begin{figure}%%Extraño que el volumen se mantenga constante. XXX: La grafica termina al principio del documento, corregir.
+\begin{figure}[h]
 \includegraphics[width=\textwidth]{img/ej01.png}
 \caption{Volumen del sistema 1.4 a lo largo de 2s}
 \label{fig:p1.1}
@@ -39,6 +40,56 @@ Utilizar los parámetros: $\rho = 1$, $g=9.8$, $A= 1$ y $R = 1$.
 	\item Calcular y graficar la solución con condiciones iniciales $c_{e}(0)=1$, $c_{s}(0)=0$, considerando los parámetros $r_{a}=2$ y $r_{e}=1$
 	\item Repetir el punto anterior los parámetros $r_{a}=20$, $r_{e}=1$ y para $r_{a} = 0.1$, $r_{e}=1$.
 	\end{enumerate}
+
+	\begin{enumerate}[a)]
+\item
+\begin{equation}
+\left\{ \begin{array}{rl}
+  \dot{c_{e}}(t) &= -r_{a} \cdot c_{e}(t) \\
+  \dot{c_{s}}(t) &= r_{a} \cdot c_{e}(t) - r_{e} \cdot c_{s}(t)
+       \end{array} \right .
+ \label{P1.1a} \tag{1.5}
+\end{equation}
+
+\begin{equation*}
+\begin{bmatrix}
+   \dot{c_{e}}(t) \\
+   \dot{c_{s}}(t) 
+ \end{bmatrix}
+=
+\begin{bmatrix}
+   - r_{a} & 0 \\
+     r_{a} & -r_{e}
+\end{bmatrix} 
+\cdot 
+\begin{bmatrix}
+   c_{e}(t) \\
+   c_{s}(t) 
+\end{bmatrix}
+\end{equation*}
+
+\item
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej02-b.png}
+\caption{$c_{e}(0)=1$, $c_{s}(0)=0$, $r_{a}=2$ y $r_{e}=1$ }
+\label{fig:p1.1}
+\end{figure}
+
+\item
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej02-c1.png}
+\caption{$c_{e}(0)=1$, $c_{s}(0)=0$, $r_{a}=20$ y $r_{e}=1$ }
+\label{fig:p1.1}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej02-c2.png}
+\caption{$c_{e}(0)=1$, $c_{s}(0)=0$, $r_{a}=0.1$ y $r_{e}=1$ }
+\label{fig:p1.1}
+\end{figure}
+
+\end{enumerate}
+
   \item[P1.3] Respuesta al escalón de un sistema de segundo orden para el sistema masa resorte (1.7):
 	\begin{enumerate}[a)]
 	\item Reescribir la ecuación en forma matricial.
