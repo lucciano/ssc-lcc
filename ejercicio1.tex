@@ -182,6 +182,29 @@ U(t)
 
   \item[P1.5] Estabilidad de los sitemas lineales y estacionarios. Analizar la estabilidad de los sistemas de los Ejemplos 1.1, 1.3, 1.4, 1.5 y 1.7. Considerar en todos los casos que todos los parametros son positivos.
 
+\begin{itemize}
+        \item[1.1)] $ \dot{c_e}(t) = -r_a \cdot c_e(t) $ Modo exponencial convergente
+        \item[1.3)] $ \dot{v}(t) = g - \frac{b}{m} \cdot v(t) \cdot \lvert v(t) \rvert $  Modo exponencial convergente
+        \item[1.4)] $ \dot{V}(t) = - \frac{\rho \cdot g}{A \cdot R} \cdot V(t) 'Q(t) $  Modo exponencial convergente
+        \item[1.5)] 
+$
+\left\{ \begin{array}{rl}
+  \dot{c_e}(t) &= - r_a  \cdot c_e(t) \\
+  \dot{c_s}(t) &= r_a \cdot c_e(t) - r_e \cdot c_s(t)
+       \end{array} \right .
+$
+Autovalores -2 y 0 , por lo tanto los modos son exponencial convergente y marginalmente estable.
+
+        \item[1.7)] 
+$
+\left\{ \begin{array}{rl}
+  \dot{x}(t) &= - v(t) \\
+  \dot{v}(t) &= - \frac{k}{m} \dot x(t) - \frac{b}{m}\cdot v(t) + \frac{1}{m} \cdot F(t)
+       \end{array} \right .
+$
+La matriz del sistema asociado tiene autovalores ( $- 0.5 + 0.8660254i$ y $ - 0.5 - 0.8660254i $) complejos y conjugados con $\mathbf{R}_e (\lambda_{i}) < 0$ por lo que el modo es estable.
+\end{itemize}
+
   \item[P1.6] Punto de equilibrio de un sistema lineal y estacionario. Para el sistema hidráulico (1.4), considerando $Q(t)=\bar{Q}$ (constante) y los parámetros utilizandos en el Problema P1.1, calcular el \textit{punto de equilibrio}. Es decir, se pide cualcular el valor del estado (en este caso $V(t)$) para el cual la solución queda en un estado estacionario ($\dot{V}(t)=0$)
 Corroborar luego este resultado con la solución del sistema calculada en el Problema P1.1.
 
