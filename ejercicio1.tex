@@ -72,20 +72,17 @@ Utilizar los parámetros: $\rho = 1$, $g=9.8$, $A= 1$ y $R = 1$.
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{img/ej02-b.png}
 \caption{$c_{e}(0)=1$, $c_{s}(0)=0$, $r_{a}=2$ y $r_{e}=1$ }
-\label{fig:p1.1}
 \end{figure}
 
 \item
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{img/ej02-c1.png}
 \caption{$c_{e}(0)=1$, $c_{s}(0)=0$, $r_{a}=20$ y $r_{e}=1$ }
-\label{fig:p1.1}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{img/ej02-c2.png}
 \caption{$c_{e}(0)=1$, $c_{s}(0)=0$, $r_{a}=0.1$ y $r_{e}=1$ }
-\label{fig:p1.1}
 \end{figure}
 
 \end{enumerate}
@@ -96,6 +93,48 @@ Utilizar los parámetros: $\rho = 1$, $g=9.8$, $A= 1$ y $R = 1$.
 	\item Calcular y graficar la solución considerando condiciones iniciales nulas y que la fuerza de entrada es un escalón unitario, $F(t)=\epsilon(t)$ definido en la Ec(P1.1a). Suponer que los parámetros valen $m=k=b=1$.
 	\end{enumerate}
 
+\begin{enumerate}[a)]
+	\item
+\begin{equation}
+\left\{ \begin{array}{rl}
+  \dot{x}(t) &= v(t) \\
+  \dot{v}(t) &= - \frac{k}{m} \cdot x(t) - \frac{b}{m} \cdot v(t) + \frac{1}{m} \cdot F(t)
+       \end{array} \right .
+ \label{P1.1a} \tag{1.5}
+\end{equation}
+
+\begin{equation*}
+\begin{bmatrix}
+   \dot{x}(t) \\
+   \dot{v}(t) 
+ \end{bmatrix}
+=
+\begin{bmatrix}
+   1 & 0 \\
+  - \frac{k}{m} &  - \frac{b}{m}
+\end{bmatrix} 
+\cdot 
+\begin{bmatrix}
+   x(t) \\
+   v(t) 
+\end{bmatrix}
++
+\begin{bmatrix}
+   0 \\
+\frac{1}{m}
+\end{bmatrix}
+\cdot
+F(t)
+\end{equation*}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej03b.png}
+\caption{}
+\end{figure}
+
+
+
+\end{enumerate}
   \item[P1.4] Transformación de una DAE en una ODE explícita. Convertir la DAE (1.9)-(1.10) en una ecuación diferencial ordinaria y escribirla en forma matricial.
 
   \item[P1.5] Estabilidad de los sitemas lineales y estacionarios. Analizar la estabilidad de los sistemas de los Ejemplos 1.1, 1.3, 1.4, 1.5 y 1.7. Considerar en todos los casos que todos los parametros son positivos.
