@@ -34,14 +34,14 @@ Utilizar los parámetros: $\rho = 1$, $g=9.8$, $A= 1$ y $R = 1$.
 \end{figure}
 
   \item[P1.2] Solucion libre de un sistema de segundo orden
-	Para el sistema (1.5):
-	\begin{enumerate}[a)]
-	\item Reescribir la ecuación de forma matricial
-	\item Calcular y graficar la solución con condiciones iniciales $c_{e}(0)=1$, $c_{s}(0)=0$, considerando los parámetros $r_{a}=2$ y $r_{e}=1$
-	\item Repetir el punto anterior los parámetros $r_{a}=20$, $r_{e}=1$ y para $r_{a} = 0.1$, $r_{e}=1$.
-	\end{enumerate}
+        Para el sistema (1.5):
+        \begin{enumerate}[a)]
+        \item Reescribir la ecuación de forma matricial
+        \item Calcular y graficar la solución con condiciones iniciales $c_{e}(0)=1$, $c_{s}(0)=0$, considerando los parámetros $r_{a}=2$ y $r_{e}=1$
+        \item Repetir el punto anterior los parámetros $r_{a}=20$, $r_{e}=1$ y para $r_{a} = 0.1$, $r_{e}=1$.
+        \end{enumerate}
 
-	\begin{enumerate}[a)]
+        \begin{enumerate}[a)]
 \item
 \begin{equation}
 \left\{ \begin{array}{rl}
@@ -88,13 +88,13 @@ Utilizar los parámetros: $\rho = 1$, $g=9.8$, $A= 1$ y $R = 1$.
 \end{enumerate}
 
   \item[P1.3] Respuesta al escalón de un sistema de segundo orden para el sistema masa resorte (1.7):
-	\begin{enumerate}[a)]
-	\item Reescribir la ecuación en forma matricial.
-	\item Calcular y graficar la solución considerando condiciones iniciales nulas y que la fuerza de entrada es un escalón unitario, $F(t)=\epsilon(t)$ definido en la Ec(P1.1a). Suponer que los parámetros valen $m=k=b=1$.
-	\end{enumerate}
+        \begin{enumerate}[a)]
+        \item Reescribir la ecuación en forma matricial.
+        \item Calcular y graficar la solución considerando condiciones iniciales nulas y que la fuerza de entrada es un escalón unitario, $F(t)=\epsilon(t)$ definido en la Ec(P1.1a). Suponer que los parámetros valen $m=k=b=1$.
+        \end{enumerate}
 
 \begin{enumerate}[a)]
-	\item
+        \item
 \begin{equation}
 \left\{ \begin{array}{rl}
   \dot{x}(t) &= v(t) \\
@@ -137,16 +137,59 @@ F(t)
 \end{enumerate}
   \item[P1.4] Transformación de una DAE en una ODE explícita. Convertir la DAE (1.9)-(1.10) en una ecuación diferencial ordinaria y escribirla en forma matricial.
 
+\begin{equation*}
+\left\{ \begin{array}{rl}
+  \dot{u_{c}}(t) &= \frac{1}{C} \cdot i_{L}(t) + \frac{1}{R_{2} \cdot C} u_{L}(t)\\
+  \dot{i_{L}}(t) &= - \frac{1}{L} \cdot u_{L}(t) \\
+  U(t) &= R_{1} \cdot i_{L}(t) - u_{C}(t) - (1+ \frac{R_{1}}{R_{2}}) \cdot u_{L}(t)
+       \end{array} \right .
+\end{equation*}
+
+\begin{equation*}
+\left\{ \begin{array}{rl}
+  \dot{u_{c}}(t) &= (\frac{1}{C} - \frac{R_{1}}{C\cdot (R_{1} + R_{2})}) \cdot i_{L}(t) - \frac{1}{C \dot (R_{1} + R_{2})} \cdot u_{L}(t) + \frac{1}{C \cdot (R_1 + R_2)} \cdot U(t)\\
+  \dot{i_{L}}(t) &= - \frac{R_1 \cdot R_2}{L \cdot (R_1 + R_2)} \cdot i_L(t) - \frac{R_1}{L\cdot (R_1 + R_2)} \cdot u_C(t) + \frac{R_2}{L \cdot (R_1+R_2)} \cdot U(t)
+       \end{array} \right .
+\end{equation*}
+
+\begin{equation*}
+\begin{bmatrix}
+   \dot{i_C}(t) \\
+   \dot{u_L}(t) 
+ \end{bmatrix}
+=
+\begin{bmatrix}
+  - \frac{R_1 \cdot R_2}{L\cdot (R_1+R_2)} &  \frac{R_2}{L\cdot (R_1 + R_2)} \\
+  \frac{1}{C} \cdot (1 - \frac{R_1}{(R_1+R_2)} & - \frac{1}{C \cdot (R_1 + R_2)} 
+\end{bmatrix} 
+\cdot 
+\begin{bmatrix}
+   i_C(t) \\
+   u_L(t) 
+\end{bmatrix}
++
+\begin{bmatrix}
+   \frac{R_2}{L\cdot(R_1+R_2)} \\
+   \frac{1}{C \cdot (R_1+R_2)}
+\end{bmatrix}
+\cdot
+U(t)
+\end{equation*}
+
+
+
+
+
   \item[P1.5] Estabilidad de los sitemas lineales y estacionarios. Analizar la estabilidad de los sistemas de los Ejemplos 1.1, 1.3, 1.4, 1.5 y 1.7. Considerar en todos los casos que todos los parametros son positivos.
 
   \item[P1.6] Punto de equilibrio de un sistema lineal y estacionario. Para el sistema hidráulico (1.4), considerando $Q(t)=\bar{Q}$ (constante) y los parámetros utilizandos en el Problema P1.1, calcular el \textit{punto de equilibrio}. Es decir, se pide cualcular el valor del estado (en este caso $V(t)$) para el cual la solución queda en un estado estacionario ($\dot{V}(t)=0$)
 Corroborar luego este resultado con la solución del sistema calculada en el Problema P1.1.
 
    \item[P1.7] Punto de equilibrio en sistemas no lineales Calcular el/los puntos/s de equilibrio de los sistemas:
-	\begin{enumerate}[a)]
-	\item El sistema (1.3), considerando $b=m=1$, $g=9.8$
-	\item El sistema presa-depredador (1.8), suponiendo $r=a=b=m=0.1$. 
-	\end{enumerate}
+        \begin{enumerate}[a)]
+        \item El sistema (1.3), considerando $b=m=1$, $g=9.8$
+        \item El sistema presa-depredador (1.8), suponiendo $r=a=b=m=0.1$. 
+        \end{enumerate}
 
 Interpretar los resultados.
 
