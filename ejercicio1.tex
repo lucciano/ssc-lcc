@@ -222,8 +222,47 @@ Corroborar luego este resultado con la solución del sistema calculada en el Pro
         \item El sistema (1.3), considerando $b=m=1$, $g=9.8$
         \item El sistema presa-depredador (1.8), suponiendo $r=a=b=m=0.1$. 
         \end{enumerate}
-
 Interpretar los resultados.
+
+        \begin{enumerate}[a)]
+        \item $b=m=1$, $g=9.8$
+\begin{equation*}
+\begin{array}{rl}
+\dot{v}(t) &= g - v(t) \cdot  \lvert v(t)\rvert \\
+g &= v(t) \cdot  \lvert v(t)\rvert \\
+v(t) &= \sqrt{g}
+\end{array}
+\end{equation*}
+
+        \item $r=a=b=m=0.1$. 
+\begin{equation*}
+\left\{ \begin{array}{rl}
+  \dot{p}(t) &= r \cdot p(t) - a \cdot p(t) \cdot d(t) \\
+  \dot{d}(t) &= b \cdot p(t) \cdot d(t) - m \cdot d(t)
+       \end{array} \right .
+\end{equation*}
+
+\begin{equation*}
+\left\{ \begin{array}{rl}
+  0 &= r \cdot p(t) - a \cdot p(t) \cdot d(t) \\
+  0 &= b \cdot p(t) \cdot d(t) - m \cdot d(t)
+       \end{array} \right .
+\end{equation*}
+
+\begin{equation*}
+\left\{ \begin{array}{rl}
+  d(t) &= \frac{r}{a} \\
+  p(t) &= \frac{m}{b}  
+       \end{array} \right .
+\end{equation*}
+
+
+
+
+
+        \end{enumerate}
+
+
 
 
 
