@@ -17,8 +17,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \item[P2.1] Estabilidad Marginal : Dado el siguiente sistema lineal y estacionario
 
-\begin{equation}
-\dot{x} = \begin{pmatrix}
+\begin{align}
+\dot{x} &= \begin{pmatrix}
   1250 & -25113 & -60050 & -42647 & -23999 \\
    500 & -10068 & -24057 & -17092 &  -9613 \\
    250 &  -5060 & -12079 &  -8586 &  -4826 \\
@@ -26,26 +26,69 @@
    250 &  -4963 & -11896 &  -8438 &  -4756 
        \end{pmatrix} 
 \cdot x +
-\begin{pmatrix}{rl}
+\begin{pmatrix}
 	5 \\
 	2 \\
 	1 \\
 	-3 \\
  	1
 	\end{pmatrix}
-\cdot u
+\cdot u 
+%\notag \\
+%y &= \begin{pmatrix}-1 & 26 & 59 & 43 & 23 \end{pmatrix} \cdot x
  \label{P2.1a} \tag{P2.1a}
-\end{equation}
+\end{align}
 
 con condiciones iniciales:
 
 \begin{equation}
-y = (-1 26 59 43 23) \cdot x
+x_0 = \begin{pmatrix}1 & -2 & 3 & -4 & 5 \end{pmatrix}^{T}
  \label{P2.1b} \tag{P2.1b}
 \end{equation}
 
 Determinar el paso de integración, $h_{marg}$, para el cual FE dará resultados marginales estables.
 Simular el sistema durante 10 segundos de tiempo de simulación con una entrada escalón utilizando el método de FE con los siguientes pasos  de integración : (i) $h=0.1 \cdot h_{marg}$, (ii) $h=0.95 \cdot h_{marg}$, (iii) $h= h_{marg}$, (iv) $h= 1.05 \cdot h_{marg}$ y (v) $h=2 \cdot h_{marg}$. Discutir los resultados
+
+rta :
+El vector de autovalores es 
+\begin{equation*}
+\begin{pmatrix}
+  - 4 + 3.i  \\
+  - 4 - 3.i  \\
+  - 5        \\
+  - 2.               \\
+  - 1.   
+	\end{pmatrix}
+\end{equation*}
+entonces $h_{marg} < 0.25$
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej2-1-i.png}
+\caption{$h=0.1 \cdot h_{marg}$}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej2-1-ii.png}
+\caption{$h=0.95 \cdot h_{marg}$}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej2-1-iii.png}
+\caption{$h=h_{marg}$}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej2-1-iv.png}
+\caption{$h=1.05 \cdot h_{marg}$}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej2-1-v.png}
+\caption{$h=2 \cdot h_{marg}$}
+\end{figure}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
