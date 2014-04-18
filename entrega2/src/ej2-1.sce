@@ -17,4 +17,3 @@ h =2 * hmarg;
 
 [t,x]=feuler(fp21,x0,t0,tf,h);
 plot(t,x);
-
