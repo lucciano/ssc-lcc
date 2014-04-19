@@ -98,26 +98,24 @@ Para esto , primero hay que obtener la solución analitica del sistema y luego s
 
 Repetir el mismo experimento con el método BE. Dado que el mismo sistema es lineal, se permite calcular la matrix F utilizando la inversión matricial.
 
-Para FE $ h = 0.001 $ $\varepsilon_{global} \approx 0.0070881$ .
-Para BE $ h = 0.001 $ $\varepsilon_{global} \approx 0.0070190$ 
+Para FE $ h = 0.001 $ $\varepsilon_{global} \approx 0.0071622$.
+Para BE $ h = 0.001 $ $\varepsilon_{global} \approx 0.0070922$ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item [P2.3] Método Blending: Dado el siguiente sistema lineal y estacionario: 
 
 \begin{equation}
-\begin{split}
-	\dot{x} &= 
+	\dot{x} = 
 		\begin{pmatrix}
 			0 & 1 \\
 			-9.01 & 0.2 
 		\end{pmatrix}
-	\cdot x + 
-		\begin{pmatrix}
-			0 \\ 1
-		\end{pmatrix}
-	\cdot u \\
-	y &= \begin{pmatrix} 0 & 1 \end{pmatrix} \cdot x + 2 \cdot u 
-\end{split}
+	\cdot x %+ 
+		%\begin{pmatrix}
+		%	0 \\ 1
+		%\end{pmatrix}
+	%\cdot u 
  \label{P2.3a} \tag{P2.3a}
+	%y &= \begin{pmatrix} 0 & 1 \end{pmatrix} \cdot x + 2 \cdot u 
 \end{equation}
 
 con condicion inicial
@@ -129,6 +127,9 @@ x_0 = \begin{pmatrix} 1 & -2\end{pmatrix}^T
 
 Encontrar la solución analítica. Simulando durante 25 segundos, determinar el máximo paso de integración que permite alcanzar una precisión global del $1\%$ utilizando FE. Luego repetir para BE. Sacar conclusiones
 Un algoritmo mixto puede obtenerse de la siguiente forma: hacemos un paso de integración FE y luego el mismo paso lo hacemos con BE, y damos como resultado el promedio de ambos valores. Para este método mixto, obtener el máximo paso que permite alcansar una precisión del $1\%$. Comparar el resultado con el de FE y BE por sí mismo.
+
+Para FE $h = 0.001$ $\varepsilon \approx 0.0071622$, para BE y $h = 0.001$ $\varepsilon \approx 0.0092752 $ 
+Con $h = 0.01$ para el algoritmo mixto $\varepsilon \approx 0.0188726$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[P2.4] Método Ciclico. Repetir el Prob.[P2.3]. Sin embargo, esta vez utilizaremos otro algorimo. En lugar de utilizar el promedio de FE y BE, alternaremos un paso con FE y otro con BE. Tales algorimos se llaman métodos cíclicos.
 Determinar nuevamente el máximo paso de integración que alcanzze un $1\%$ de precisión y comparar con lo métodos de FE y BE.
