@@ -133,13 +133,24 @@ Con $h = 0.01$ para el algoritmo mixto $\varepsilon \approx 0.0188726$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[P2.4] Método Ciclico. Repetir el Prob.[P2.3]. Sin embargo, esta vez utilizaremos otro algorimo. En lugar de utilizar el promedio de FE y BE, alternaremos un paso con FE y otro con BE. Tales algorimos se llaman métodos cíclicos.
 Determinar nuevamente el máximo paso de integración que alcanzze un $1\%$ de precisión y comparar con lo métodos de FE y BE.
+
+Para el algorimos cíclico $h = 0.01$ $\varepsilon \approx 0.0188583$.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[P2.5] Dominio de estabilidad : Métodos mixtos y cíclicos. Obtener el dominio de estabilidad para el método míxto del Prob.[2.3]. ¿Que puede concluirse al comparar dichos dominios de estabilidad con los de FE y BE? ¿Cómo se puede explicar a partir de estos dominios de estabilidad los resultados de Prob.[P2.3]?
 Repetir el análisis para el método cíclico del Prob.[P2.4]. Para analizar el dominio de estabilidad en este último caso, puede utilizar la siguiente ayuda:
 En lugar de interpretar este método cíclico como la conmutación de dos métodos tras cada paso, puede pensar que consite en un simple paso grande formado por dos pequeños:
 \begin{align}
 	x(k+0.5) &= x(k) + 0.5 + h \cdot \dot{x}(k) \tag{P2.5a} \\
-	x(k+1)   &= x(k + 0.5) + 0.5 \cdot h \dot{x}(k+1) \tag{P2.5b}
+	x(k+1)   &= x(k + 0.5) + 0.5 \cdot h \cdot \dot{x}(k+1) \tag{P2.5b}
+\end{align}
+
+planteamos para el mixto el promedio de los dos algoritmos, y vemos que queda, para esto usamos la rutina de la web
+la matrix del cíclico es (con la ayuda)
+
+\begin{align}
+	x(k+1)   &=  x(k) + 0.5 + h \cdot \dot{x}(k) + 0.5 \cdot h \cdot \dot{x}(k+1) \\
+	x(k+1)   &=  x(k) + 0.5 + h \cdot 0.5 \cdot (2 \cdot \dot{x}(k) +  \dot{x}(k+1)) \\
 \end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[P2.6] Ajuste del Dominio de Estabilidad: Método Mixto : Veremos otro método derivado del método mixto antes analizado. Aqui, en lugar de utilizar el promedio de FE y BE, utilizaremos el promedio ponderado:
@@ -155,6 +166,8 @@ Este método se denomina método-$\vartheta$ . Dibujar los dominios de estabilid
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 item[P2.7] Ajuste del Dominio de Estabilidad: Método Cíclico Veremos ahora otro método-$\vartheta$. Esta vez, a partir de un método cíclico. El parámetro que variaremos es la longitud de los dos semi-pasos de la siguiente forma:
+
+%TODO copiar equacion.
 
 Se pide entonces determinar el parámetro $\vartheta$ tal que el método tenga una región de estabilidad similar a BE, pero donde el borde de la estabilidad sobre el eje real positivo del pano $(\lambda \cdot h)$ esté localizado en $+10$ en lugar de $+2$.
 Dibujar el dominio de estabilidad para este método

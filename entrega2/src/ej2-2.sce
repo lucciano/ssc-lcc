@@ -28,10 +28,10 @@ x_a=ltisol(A,B,u,x0, t);
 
 //plot(t,x_a);
 
-err1 = sqrt(sum((x - x_a) .* (x - x_a)) / sum((x_a .* x_a)))
+err1 = norm(x - x_a) / norm(x_a)
 
 //F=inv(eye(A) - A * h)
 h = 0.001;
 [t,x]=beuler(fp21,x0,t0,tf,h);
 x_a=ltisol(A,B,u,x0, t);
-err2 = sqrt(sum((x - x_a) .* (x - x_a)) / sum((x_a .* x_a)))
+err2 = norm(x - x_a) / norm(x_a)
