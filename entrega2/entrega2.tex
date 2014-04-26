@@ -60,7 +60,7 @@ El vector de autovalores es
   - 1   
 	\end{pmatrix}
 \end{equation*}
-entonces $h_{marg} < 0.25$
+entonces $h_{marg} < 0.32$
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{img/ej2-1-i.png}
@@ -141,17 +141,20 @@ Para el algorimos cíclico $h = 0.01$ $\varepsilon \approx 0.0188583$.
 Repetir el análisis para el método cíclico del Prob.[P2.4]. Para analizar el dominio de estabilidad en este último caso, puede utilizar la siguiente ayuda:
 En lugar de interpretar este método cíclico como la conmutación de dos métodos tras cada paso, puede pensar que consite en un simple paso grande formado por dos pequeños:
 \begin{align}
-	x(k+0.5) &= x(k) + 0.5 + h \cdot \dot{x}(k) \tag{P2.5a} \\
+	x(k+0.5) &= x(k) * 0.5 + h \cdot \dot{x}(k) \tag{P2.5a} \\
 	x(k+1)   &= x(k + 0.5) + 0.5 \cdot h \cdot \dot{x}(k+1) \tag{P2.5b}
 \end{align}
 
-planteamos para el mixto el promedio de los dos algoritmos, y vemos que queda, para esto usamos la rutina de la web
-la matrix del cíclico es (con la ayuda)
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej5-mixto.png}
+\caption{Mixto}
+\end{figure}
 
-\begin{align}
-	x(k+1)   &=  x(k) + 0.5 + h \cdot \dot{x}(k) + 0.5 \cdot h \cdot \dot{x}(k+1) \\
-	x(k+1)   &=  x(k) + 0.5 + h \cdot 0.5 \cdot (2 \cdot \dot{x}(k) +  \dot{x}(k+1)) \\
-\end{align}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej5-ciclico.png}
+\caption{Cíclico}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item[P2.6] Ajuste del Dominio de Estabilidad: Método Mixto : Veremos otro método derivado del método mixto antes analizado. Aqui, en lugar de utilizar el promedio de FE y BE, utilizaremos el promedio ponderado:
 \begin{equation}
@@ -163,6 +166,75 @@ Este método se denomina método-$\vartheta$ . Dibujar los dominios de estabilid
 \begin{equation}
 \vartheta = \{0, 0.1, 0.2, 0.24, 0.249, 0.25, 0.251, 0.26, 0.3, 0.5, 0.8, 1\} \tag{P2.6b}
 \end{equation}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-1.png}
+\caption{$\vartheta = 0$ Backward Euler}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-2.png}
+\caption{$\vartheta = 0.1$ }
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-3.png}
+\caption{$\vartheta = 0.2$ }
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-4.png}
+\caption{$\vartheta = 0.24$ }
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-5.png}
+\caption{$\vartheta = 0.249$ }
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-6.png}
+\caption{$\vartheta = 0.25$ }
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-7.png}
+\caption{$\vartheta = 0.251$ }
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-8.png}
+\caption{$\vartheta = 0.26$ }
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-9.png}
+\caption{$\vartheta = 0.3$ }
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-10.png}
+\caption{$\vartheta = 0.5$ Método Mixto}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-11.png}
+\caption{$\vartheta = 0.8$}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej6-12.png}
+\caption{$\vartheta = 1$ Forward Euler}
+\end{figure}
+
+
+
+
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 item[P2.7] Ajuste del Dominio de Estabilidad: Método Cíclico Veremos ahora otro método-$\vartheta$. Esta vez, a partir de un método cíclico. El parámetro que variaremos es la longitud de los dos semi-pasos de la siguiente forma:
