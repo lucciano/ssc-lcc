@@ -141,7 +141,7 @@ Para el algorimos cíclico $h = 0.01$ $\varepsilon \approx 0.0188583$.
 Repetir el análisis para el método cíclico del Prob.[P2.4]. Para analizar el dominio de estabilidad en este último caso, puede utilizar la siguiente ayuda:
 En lugar de interpretar este método cíclico como la conmutación de dos métodos tras cada paso, puede pensar que consite en un simple paso grande formado por dos pequeños:
 \begin{align}
-	x(k+0.5) &= x(k) * 0.5 + h \cdot \dot{x}(k) \tag{P2.5a} \\
+	x(k+0.5) &= x(k) \cdot 0.5 + h \cdot \dot{x}(k) \tag{P2.5a} \\
 	x(k+1)   &= x(k + 0.5) + 0.5 \cdot h \cdot \dot{x}(k+1) \tag{P2.5b}
 \end{align}
 
@@ -227,22 +227,26 @@ Este método se denomina método-$\vartheta$ . Dibujar los dominios de estabilid
 \caption{$\vartheta = 1$ Forward Euler}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-item[P2.7] Ajuste del Dominio de Estabilidad: Método Cíclico Veremos ahora otro método-$\vartheta$. Esta vez, a partir de un método cíclico. El parámetro que variaremos es la longitud de los dos semi-pasos de la siguiente forma:
+\item[P2.7] Ajuste del Dominio de Estabilidad: Método Cíclico Veremos ahora otro método-$\vartheta$. Esta vez, a partir de un método cíclico. El parámetro que variaremos es la longitud de los dos semi-pasos de la siguiente forma:
 
-%TODO copiar equacion.
+
+\begin{align}
+	x(k+\vartheta) &= x(k) \cdot \vartheta + h \cdot \dot{x}(k) \tag{P2.7a} \\
+	x(k+1)   &= x(k + \vartheta) + \vartheta \cdot h \cdot \dot{x}(k+1) \tag{P2.7b}
+\end{align}
+
 
 Se pide entonces determinar el parámetro $\vartheta$ tal que el método tenga una región de estabilidad similar a BE, pero donde el borde de la estabilidad sobre el eje real positivo del pano $(\lambda \cdot h)$ esté localizado en $+10$ en lugar de $+2$.
 Dibujar el dominio de estabilidad para este método
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/ej7.png}
+\caption{$\vartheta = 0.4$}
+\end{figure}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{itemize}
 \end{document}

@@ -6,7 +6,6 @@ endfunction
 
 //F='1/2 * ((eye(A) + h * A) + inv(eye(A) - h * A))'; //mixto
 //F='(eye(A) + h/2 * A)  * inv(eye(A) - h/2 * A)'; //ciclico
-F='(eye(A) + 0.4*h * A)  * inv(eye(A) - (1-0.4)*h * A)'; //ciclico-0.4
 //F='(eye(A) + h * A) * 0 + (1-0) * inv(eye(A) - h * A)'; //metodo-1 ==BE
 //F='(eye(A) + h * A) * 0.1 + (1-0.1) * inv(eye(A) - h * A)'; //metodo-0.1
 //F='(eye(A) + h * A) * 0.2 + (1-0.2) * inv(eye(A) - h * A)'; //metodo-0.2
@@ -16,9 +15,9 @@ F='(eye(A) + 0.4*h * A)  * inv(eye(A) - (1-0.4)*h * A)'; //ciclico-0.4
 //F='(eye(A) + h * A) * 0.251 + (1-0.251) * inv(eye(A) - h * A)'; //metodo-0.251
 //F='(eye(A) + h * A) * 0.26 + (1-0.26) * inv(eye(A) - h * A)'; //metodo-0.26
 //F='(eye(A) + h * A) * 0.3 + (1-0.3) * inv(eye(A) - h * A)'; //metodo-0.3
-//F='(eye(A) + h * A) * 0.5 + (1-0.5) * inv(eye(A) - h * A)'; //metodo-0.5 ciclico
+//F='(eye(A) + h * A) * 0.5 + (1-0.5) * inv(eye(A) - h * A)'; //metodo-0.5
 //F='(eye(A) + h * A) * 0.8 + (1-0.8) * inv(eye(A) - h * A)'; //metodo-0.8
-//F='(eye(A) + h * A) * 1 + (1-1) * inv(eye(A) - h * A)'; //metodo-FE
+F='(eye(A) + h * A) * 1 + (1-1) * inv(eye(A) - h * A)'; //metodo-FE
 
 //F='eye(A)+A*h';
 
